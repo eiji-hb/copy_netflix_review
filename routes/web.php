@@ -2,9 +2,6 @@
 
 
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/', 'HomeController@index')->name('root');
 Route::get('show/{id}', 'HomeController@index')->name('home.show');
 Route::get('movie', 'HomeController@index')->name('home.movie');
