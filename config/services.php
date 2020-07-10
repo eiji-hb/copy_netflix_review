@@ -29,5 +29,9 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'net' => [
+      'host' => env('NETFLIX_SECRET_HOST_KEY'),
+      'key' => env('NETFLIX_SECRET_ACCESS_KEY'),
+    ],
 
 ];
