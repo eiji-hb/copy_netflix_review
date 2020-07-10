@@ -10,7 +10,8 @@ class homecontroller extends Controller
   public function index()
   {
     $videos = Video::all();
-    return view('homes.index',['videos'=>$videos]);
+    return view('homes.index');
+    // return view('homes.index',['videos'=>$videos]);
   }
   public function show()
   {
