@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Video;
 
 class homecontroller extends Controller
 {
   public function index()
   {
-    return view('homes.index');
+    $videos = Video::all();
+    return view('homes.index',['videos'=>$videos]);
   }
   public function show()
   {

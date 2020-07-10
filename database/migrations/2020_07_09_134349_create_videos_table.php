@@ -17,18 +17,18 @@ class CreateVideosTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('vtype');
-            $table->text('img');
+            $table->text('img')->nullable();
             $table->integer('nfid');
-            $table->string('imdbid');
+            $table->string('imdbid')->nullable();
             $table->string('title');
             $table->dateTime('titledate');
-            $table->string('jp_title');
+            $table->string('jp_title')->nullable();
             $table->text('synopsis');
             $table->integer('year');
             $table->integer('runtime');
-            $table->text('synopsis_jp');
-            $table->string('video_id');
-            $table->string('channel_name');
+            $table->text('synopsis_jp')->nullable();
+            $table->string('video_id')->nullable();
+            $table->string('channel_name')->nullable();
         });
     }
 
