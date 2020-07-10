@@ -14,6 +14,7 @@ class VideoSeeder extends Seeder
   public function run()
   {
     $curl = curl_init();
+    #limitが最大100なので100でづつoffsetしながらcallする
     for($i = 0;$i <= LIMIT;$i += 100){
       // echo "https://unogsng.p.rapidapi.com/search?countrylist=267&limit=100&offset=".$i;
       curl_setopt_array($curl, array(
@@ -33,6 +34,7 @@ class VideoSeeder extends Seeder
       $response = curl_exec($curl);
       $data = json_decode($response, true);
       $err = curl_error($curl);
+      # 0~99まで繰り返す
       for($j = 0; $j < count($data["results"]); $j++ ){
         $videos = App\Models\Video::all();
         if ($err) {
@@ -40,6 +42,7 @@ class VideoSeeder extends Seeder
         }elseif($videos->contains('nfid',$data["results"][$j]["nfid"]))
         {
           echo "continue:".$j."/".count($data["results"]).PHP_EOL;
+          # すでに保存済みのデータはスキップする
           continue;
         }
         else {
@@ -60,6 +63,7 @@ class VideoSeeder extends Seeder
       echo "---残り:".$i."/".LIMIT."---".PHP_EOL;
     }
     echo "---終了---".PHP_EOL;
+    # すべての呼び出しが終了してからcloseする
     curl_close($curl);
   }
 }
