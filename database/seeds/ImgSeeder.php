@@ -15,6 +15,7 @@ class ImgSeeder extends Seeder
       $curl = curl_init();
       $videos = App\Models\Video::all();
       $nfids = $videos->pluck('nfid','id');
+      $count = count($nfids);
       foreach($nfids as $id=>$nfid){
         $video =  App\Models\Video::find($id);
         // echo $id.PHP_EOL;
@@ -52,7 +53,8 @@ class ImgSeeder extends Seeder
             }
           }
         }
-        echo "残り: ".$id."/".count($nfids).PHP_EOL;
+        $count--;
+        echo "残り: ".$count."/".count($nfids).PHP_EOL;
       }
       echo "---終了---".PHP_EOL;
       curl_close($curl);
