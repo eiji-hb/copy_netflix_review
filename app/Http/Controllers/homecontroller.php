@@ -12,9 +12,11 @@ class homecontroller extends Controller
     $videos = Video::all();
     return view('homes.index',['videos'=>$videos]);
   }
-  public function show()
+  public function show($id)
   {
-    // return view('homes.index');
+    $video = Video::find($id);
+    // dd($video);
+    return view('homes.show',['video'=>$video]);
   }
   public function movie()
   {
