@@ -4,7 +4,7 @@
   <div class="container pt-5">
     <div class="row">
       <div class="col-sm-4">
-
+        <img src={{$video->img}}>
       </div>
       <div class="col-sm-8">
         <!-- <h1>{{ $video->jp_title }}</h1> -->
