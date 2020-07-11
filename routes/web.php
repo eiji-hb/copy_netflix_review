@@ -5,6 +5,6 @@
 // });
 
 Route::get('/', 'HomeController@index')->name('root');
-Route::get('show/{id}', 'HomeController@index')->name('home.show');
-Route::get('movie', 'HomeController@index')->name('home.movie');
-Route::get('series', 'HomeController@index')->name('home.series');
+Route::get('show/{id}', 'HomeController@show')->name('homes.show');
+Route::get('movie', 'HomeController@movie')->name('homes.movie');
+Route::get('series', 'HomeController@series')->name('homes.series');

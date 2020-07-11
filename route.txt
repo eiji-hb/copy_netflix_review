@@ -9,7 +9,7 @@
 |        | GET|HEAD | _debugbar/open                | debugbar.openhandler  | Barryvdh\Debugbar\Controllers\OpenHandlerController@handle    | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
 |        | GET|HEAD | _debugbar/telescope/{id}      | debugbar.telescope    | Barryvdh\Debugbar\Controllers\TelescopeController@show        | Barryvdh\Debugbar\Middleware\DebugbarEnabled,Closure |
 |        | GET|HEAD | api/user                      |                       | Closure                                                       | api,auth:api                                         |
-|        | GET|HEAD | movie                         | home.movie            | App\Http\Controllers\HomeController@index                     | web                                                  |
-|        | GET|HEAD | series                        | home.series           | App\Http\Controllers\HomeController@index                     | web                                                  |
-|        | GET|HEAD | show/{id}                     | home.show             | App\Http\Controllers\HomeController@index                     | web                                                  |
+|        | GET|HEAD | movie                         | homes.movie           | App\Http\Controllers\HomeController@movie                     | web                                                  |
+|        | GET|HEAD | series                        | homes.series          | App\Http\Controllers\HomeController@series                    | web                                                  |
+|        | GET|HEAD | show/{id}                     | homes.show            | App\Http\Controllers\HomeController@show                      | web                                                  |
 +--------+----------+-------------------------------+-----------------------+---------------------------------------------------------------+------------------------------------------------------+

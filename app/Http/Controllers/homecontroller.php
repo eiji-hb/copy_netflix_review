@@ -9,20 +9,19 @@ class homecontroller extends Controller
 {
   public function index()
   {
-    // $videos = Video::all();
-    return view('homes.index');
-    // return view('homes.index',['videos'=>$videos]);
+    $videos = Video::all();
+    return view('homes.index',['videos'=>$videos]);
   }
   public function show()
   {
-    return view('show.index');
+    // return view('homes.index');
   }
   public function movie()
   {
-    return view('movie.index');
+    return view('homes.movie');
   }
   public function series()
   {
-    return view('series.index');
+    return view('homes.series');
   }
 }

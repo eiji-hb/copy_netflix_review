@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'copy_netflix_review') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -40,7 +40,11 @@
                 </div>
             </div>
         </nav>
-
+        @if (session('flash_message'))
+        <div class="alert alert-success mt-5">
+          {{ session('flash_message') }}
+        </div>
+        @endif
         <main class="py-4">
             @yield('content')
         </main>
