@@ -4,7 +4,11 @@
 //   return view('welcome');
 // });
 
-Route::get('/', 'homecontroller@index')->name('root');
-Route::get('show/{id}', 'homecontroller@show')->name('homes.show');
-Route::get('movie', 'homecontroller@movie')->name('homes.movie');
-Route::get('series', 'homecontroller@series')->name('homes.series');
+Route::get('/', 'HomeController@index')->name('root');
+Route::get('show/{id}', 'HomeController@show')->name('homes.show');
+Route::get('movie', 'HomeController@movie')->name('homes.movie');
+Route::get('series', 'HomeController@series')->name('homes.series');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
