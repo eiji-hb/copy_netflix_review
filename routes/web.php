@@ -4,7 +4,7 @@
 //   return view('welcome');
 // });
 
-Route::get('/', 'HomeController@index')->name('root');
-Route::get('show/{id}', 'HomeController@show')->name('homes.show');
-Route::get('movie', 'HomeController@movie')->name('homes.movie');
-Route::get('series', 'HomeController@series')->name('homes.series');
+Route::get('/', 'homeController@index')->name('root');
+Route::get('show/{id}', 'homeController@show')->name('homes.show');
+Route::get('movie', 'homeController@movie')->name('homes.movie');
+Route::get('series', 'homeController@series')->name('homes.series');
