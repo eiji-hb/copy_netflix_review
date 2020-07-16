@@ -5,11 +5,7 @@
   <div class="row">
     @foreach($videos as $video)
       <div class="col-12 col-md-6 col-lg-3 p-2">
-        @if ($video->img === null)
-
-        @else
-          <a href="{{route('homes.show',['id' => $video->id])}}"><img src={{$video->img}}></a>
-        @endif
+        <a href="{{route('homes.show',['id' => $video->id])}}"><img src={{$video->img}}></a>
       </div>
     @endforeach
   </div>
