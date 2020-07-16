@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Video;
+use App\Models\Post;
 
 class homecontroller extends Controller
 {
@@ -15,8 +16,8 @@ class homecontroller extends Controller
   public function show($id)
   {
     $video = Video::find($id);
-    // dd($video);
-    return view('homes.show',['video'=>$video]);
+    $posts = $video->posts;
+    return view('homes.show',['video'=>$video],['posts'=>$posts]);
   }
   public function movie()
   {
